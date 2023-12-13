@@ -1,0 +1,1963 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nyiq.github.io/mk-wiki/04Coding%E7%BC%96%E7%A8%8B/algorithm/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../troubleshooting/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
+    
+    
+      
+        <title>《算法图解》巴尔加瓦 - 茜茜的资料库 - Xixi‘s Library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fad675c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.5 1.75v11.5c0 .138.112.25.25.25h3.17a.75.75 0 0 1 0 1.5H2.75A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8.5C12.216 0 13 .784 13 1.75v7.736a.75.75 0 0 1-1.5 0V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25Zm13.274 9.537v-.001l-4.557 4.45a.75.75 0 0 1-1.055-.008l-1.943-1.95a.75.75 0 0 1 1.062-1.058l1.419 1.425 4.026-3.932a.75.75 0 1 1 1.048 1.074ZM4.75 4h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75Z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.484 4.484 0 0 1-.563-1.191 3.835 3.835 0 0 1-.05-2.063 4.647 4.647 0 0 1-2.025-.293.75.75 0 0 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.747.747 0 0 1 1.06 0 .748.748 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.425 2.425 0 0 1-.507-.441 3.075 3.075 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.884.884 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7 5.527c-.814-.68-1.75-1.462-2.692-2.619a3.737 3.737 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75Z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.756 2.756 0 0 1 1.637.525c.503.377.863.965.863 1.725 0 .448-.115.83-.329 1.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6.24 6.24 0 0 0-.26.16.952.952 0 0 0-.276.245.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661.103-.067.207-.132.313-.195l.007-.004c.1-.061.182-.11.258-.161a.969.969 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.612.612 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1.01 1.01 0 0 0-.34.398ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.249 1.249 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429Zm1.047 1.074L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.036.036 0 0 0-.004-.009l-.006-.006-.008-.001c-.003 0-.006.002-.009.004Z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.488 3.488 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.036 5.036 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.677 1.677 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06Zm.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.172.172 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173Z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 2.5h10.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Zm4 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5Zm0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5ZM2.5 7.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 1.5 0Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="茜茜的资料库 - Xixi‘s Library" class="md-header__button md-logo" aria-label="茜茜的资料库 - Xixi‘s Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            茜茜的资料库 - Xixi‘s Library
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              《算法图解》巴尔加瓦
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inbox
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/" class="md-tabs__link">
+          
+  
+  01Lessons课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../02Research%E4%B8%93%E9%A2%98/" class="md-tabs__link">
+          
+  
+  02Research专题
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03UIDesign%E8%AE%BE%E8%AE%A1/" class="md-tabs__link">
+          
+  
+  03UIDesign设计
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  04Coding编程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05Reading%E4%B9%A6%E5%8D%95/" class="md-tabs__link">
+          
+  
+  05Reading书单
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="茜茜的资料库 - Xixi‘s Library" class="md-nav__button md-logo" aria-label="茜茜的资料库 - Xixi‘s Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    茜茜的资料库 - Xixi‘s Library
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    01Lessons课程
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            01Lessons课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ToDoList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    操作系统
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1-preface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 计算机系统概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2-process_thread/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 process thread
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据结构与算法
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构与算法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/1-%20Preface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 绪论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/2-LinearList/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 顺序表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/3-StackQueueArray/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 栈、队列和数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/4-String/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. 串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    高等数学
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            高等数学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    武忠祥 基础课
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            武忠祥 基础课
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/%E6%AD%A6%E5%BF%A0%E7%A5%A5-%E5%9F%BA%E7%A1%80%E8%AF%BE/01%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90%E7%AC%AC1%E8%8A%82%20%E6%98%A0%E5%B0%84%E4%B8%8E%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 函数与极限第1节 映射与函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/%E6%AD%A6%E5%BF%A0%E7%A5%A5-%E5%9F%BA%E7%A1%80%E8%AF%BE/01%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90%E7%AC%AC2%E8%8A%82%20%E6%95%B0%E5%88%97%E7%9A%84%E6%9E%81%E9%99%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 函数与极限第2节 数列的极限
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/%E6%AD%A6%E5%BF%A0%E7%A5%A5-%E5%9F%BA%E7%A1%80%E8%AF%BE/01%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90%E7%AC%AC3%E8%8A%82%20%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E9%99%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 函数与极限第3节 函数的极限
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/%E6%AD%A6%E5%BF%A0%E7%A5%A5-%E5%9F%BA%E7%A1%80%E8%AF%BE/01%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90%E7%AC%AC4%E8%8A%82%20%E6%97%A0%E7%A9%B7%E5%B0%8F%E4%B8%8E%E6%97%A0%E7%A9%B7%E5%A4%A7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 函数与极限第4节 无穷小与无穷大
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/%E6%AD%A6%E5%BF%A0%E7%A5%A5-%E5%9F%BA%E7%A1%80%E8%AF%BE/01%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90%E7%AC%AC5%E8%8A%82%20%E6%9E%81%E9%99%90%E8%BF%90%E7%AE%97%E6%B3%95%E5%88%99/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 函数与极限第5节 极限运算法则
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01Lessons%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/%E6%AD%A6%E5%BF%A0%E7%A5%A5-%E5%9F%BA%E7%A1%80%E8%AF%BE/01%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90%E7%BB%AA%E8%AE%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 函数与极限绪论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    02Research专题
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            02Research专题
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02Research%E4%B8%93%E9%A2%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ToDoList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02Research%E4%B8%93%E9%A2%98/about_book_making/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    制作电子书的软件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02Research%E4%B8%93%E9%A2%98/about_digital_humanities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数字人文 - digital humanities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02Research%E4%B8%93%E9%A2%98/about_information_quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About information quality
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02Research%E4%B8%93%E9%A2%98/about_learning_method/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About learning method
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02Research%E4%B8%93%E9%A2%98/about_pressure_reassuring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About pressure reassuring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    03UIDesign设计
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            03UIDesign设计
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03UIDesign%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    04Coding编程
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            04Coding编程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    《算法图解》巴尔加瓦
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    《算法图解》巴尔加瓦
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态规划
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trouble Shooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    05Reading书单
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            05Reading书单
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05Reading%E4%B9%A6%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    书单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05Reading%E4%B9%A6%E5%8D%95/awesome-blogs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Awesome blogs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05Reading%E4%B9%A6%E5%8D%95/future-is-next-second/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    未来就是下一秒
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05Reading%E4%B9%A6%E5%8D%95/hobbies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hobbies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态规划
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">《算法图解》巴尔加瓦<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>
+<p>算法运行时间的度量角度是什么？算法是从增速的角度度量的。</p>
+</li>
+<li>
+<p>二分查找的局限性是什么？二分查找只能用于有序元素列表。</p>
+</li>
+<li>
+<p>广度优先搜索的作用是什么？广度优先搜索让你能够找出两样东西之间的最短距离。</p>
+</li>
+<li>你觉得什么算法是最有用的？在我所知道的算法中，图算法应该是最有用的。</li>
+</ul>
+<h2 id="_2">动态规划<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>动态规划的适用领域是什么？需要<strong>在给定约束条件下优化某种指标</strong>时，动态规划很有用。</li>
+<li>动态规划的局限是什么？问题可分解为<strong>离散子问题</strong>时，可使用动态规划来解决。</li>
+<li>各类动态规划解决方案的共同特征是什么？每种动态规划解决方案<strong>都涉及网格</strong>。</li>
+<li>单元格中的值是什么？单元格中的值通常就是你要优化的值。</li>
+<li>网格中的每一个单元格是什么？每个单元格都是一个子问题，因此你需要考虑如何将问题分解为子问题。</li>
+<li>动态规划有没有通用的解决方案？没有放之四海皆准的计算动态规划解决方案的公式。</li>
+</ul>
+<p>◆ 11.4 并行算法</p>
+<ul>
+<li>
+<p>算法的增速是和内核数量成比例增加的吗？如果不是的话，为什么？因此即便你的笔记本电脑装备了两个而不是一个内核，算法的速度也不可能提高一倍，其中的原因有两个：并行性管理开销以及负载均衡。</p>
+</li>
+<li>
+<p>并行算法的作用是什么？改善性能和可扩展性。</p>
+</li>
+<li>
+<p>什么是最佳的学习方式？最佳的学习方式是找到感兴趣的主题，然后一头扎进去</p>
+</li>
+<li>
+<p>你对简单查找的看法是什么？简单查找，更准确的说法是傻找。每次猜测都只能排除一个数字。</p>
+</li>
+</ul>
+<p>◆ 1.3 大O表示法</p>
+<ul>
+<li>
+<p>二分查找和简单查找的大O不同说明什么？二分查找和简单查找的<strong>运行时间的增速</strong>不同。</p>
+</li>
+<li>
+<p>大O真正的用武之地是什么？仅知道算法需要多长时间才能运行完毕还不够，还需<strong>知道运行时间如何随列表增长而增加</strong>。这正是大O表示法的用武之地。</p>
+</li>
+<li>
+<p>大O表示法的作用是什么？大O表示法指出了算法有多快。大O表示法让你能够比较操作数，它指出了算法运行时间的增速。</p>
+</li>
+<li>
+<p>衡量算法的时间复杂度要从几个角度考虑？除最糟情况下的运行时间外，还应考虑平均情况的运行时间，这很重要。</p>
+</li>
+<li>
+<p>算法的速度衡量的是时间吗？算法的速度指的并非时间，而是操作数的增速。</p>
+</li>
+<li>
+<p>在谈论算法速度的时候我们究竟在谈论什么？谈论算法的速度时，我们说的是随着输入的增加，其运行时间将以什么样的速度增加。</p>
+</li>
+<li>
+<p>O(log n)和O(n)的算法速度区别大吗？O(log n)比O(n)快，当需要搜索的元素越多时，前者比后者快得越多。（假设检查一个元素需要1毫秒，简单查找和二分查找，100个元素：100毫秒-7毫秒；10亿个元素：11天-30毫秒）</p>
+</li>
+</ul>
+<p>◆ 2.2 数组和链表</p>
+<ul>
+<li>链表的优势在插入元素方面，那数组的优势又是什么呢？需要随机地读取元素时，数组的效率很高。本书经常说数组的读取速度更快，这是因为它们支持随机访问。<strong>很多情况都要求能够随机访问，因此数组用得很多。</strong></li>
+<li>计算机中将元素的位置叫做什么？元素的位置称为索引。</li>
+</ul>
+<p>◆ 3.1 递归</p>
+<ul>
+<li>递归与循环相比在计算性能上有什么优势吗？它的优势在哪里？这两种方法的作用相同，但在我看来，第二种方法更清晰。递归只是让解决方案更清晰，并没有性能上的优势。实际上，在有些情况下，使用循环的性能更好。如果使用循环，程序的性能可能更高；如果使用递归，程序可能更容易理解。如何选择要看什么对你来说更重要。2、每一次递归都缩小了问题规模。</li>
+</ul>
+<p>◆ 3.2 基线条件和递归条件</p>
+<ul>
+<li>递归函数的条件有哪些？每个递归函数都有两部分：基线条件(base case)和递归条件(recursive case)。递归条件指的是函数调用自己，而基线条件则指的是函数不再调用自己，从而避免形成无限循环。</li>
+</ul>
+<p>◆ 3.3 栈</p>
+<ul>
+<li>栈的缺点在哪里？使用栈虽然很方便，但是也要付出代价：存储详尽的信息可能占用大量的内存。</li>
+</ul>
+<p>◆ 3.4 小结</p>
+<ul>
+<li>
+<p>什么是递归？递归指的是调用自己的函数。</p>
+</li>
+<li>
+<p>栈有两种操作：压入和弹出。</p>
+</li>
+<li>函数调用需要什么空间？所有函数调用都进入调用栈。</li>
+<li>调用栈的缺点是什么？调用栈可能很长，这将占用大量的内存。</li>
+</ul>
+<p>◆ 4.1 分而治之</p>
+<ul>
+<li>
+<p>找出基线条件。最简单的数组什么样呢？请想想这个</p>
+</li>
+<li>
+<p>递归的作用是什么？给函数sum传递的数组更短。换言之，这缩小了问题的规模！</p>
+</li>
+<li>
+<p>别忘了，递归记录了状态是什么意思？递归保存了那些未完成的函数调用的状态。</p>
+</li>
+</ul>
+<p>◆ 4.2 快速排序</p>
+<ul>
+<li>归纳证明的步骤是什么？归纳证明是一种证明算法行之有效的方式，它分两步：基线条件和归纳条件。</li>
+</ul>
+<p>◆ 4.3 再谈大O表示法</p>
+<ul>
+<li>快速排序的独特之处在于，其速度取决于选择的基准值。</li>
+<li>在讨快速排序的情况比较棘手，在最糟情况下，其运行时间为O(n2)。</li>
+<li>这两个函数都迭代整个列表一次，因此它们的运行时间都为O(n)。你认为哪个函数的速度更快呢？我认为print_items要快得多，因为它没有在每次打印元素前都暂停1秒钟。</li>
+</ul>
+<p>◆ 4.4 小结</p>
+<ul>
+<li>什么是D&amp;C？D&amp;C（divide and conquer）将问题逐步分解。使用D&amp;C处理列表时，基线条件很可能是空数组或只包含一个元素的数组。</li>
+<li>大O表示法中的常量不重要吗？大O表示法中的常量有时候事关重大，这就是快速排序比合并排序快的原因所在。</li>
+</ul>
+<p>◆ 5.1 散列函数</p>
+<blockquote>
+<blockquote>
+<p>你结合使用散列函数和数组创建了一种被称为散列表(hash table)的数据结构。散列表是你学习的第一种包含额外逻辑的数据结构。数组和链表都被直接映射到内存，但散列表更复杂，它使用散列函数来确定元素的存储位置。</p>
+<p>散列表可能是最有用的，也被称为散列映射、映射、字典和关联数组。</p>
+</blockquote>
+</blockquote>
+<p>◆ 5.2 应用案例</p>
+<blockquote>
+<blockquote>
+<p>这个过程被称为DNS解析(DNS resolution)，散列表是提供这种功能的方式之一。</p>
+<p>缓存是一种常用的加速方式，所有大型网站都使用缓存，而缓存的数据则存储在散列表中！</p>
+<p>散列表适合用于：❑ 模拟映射关系；❑ 防止重复；❑ 缓存/记住数据，以免服务器再通过处理来生成它们。</p>
+</blockquote>
+</blockquote>
+<p>◆ 5.3 冲突</p>
+<blockquote>
+<blockquote>
+<p>散列函数很重要。前面的散列函数将所有的键都映射到一个位置，而最理想的情况是，散列函数将键均匀地映射到散列表的不同位置。❑ 如果散列表存储的链表很长，散列表的速度将急剧下降。然而，如果使用的散列函数很好，这些链表就不会很长！</p>
+</blockquote>
+</blockquote>
+<p>◆ 5.4 性能</p>
+<blockquote>
+<blockquote>
+<p>在平均情况下，散列表执行各种操作的时间都为O(1)。O(1)被称为常量时间。</p>
+<p>要避免冲突，需要有：❑ 较低的填装因子；❑ 良好的散列函数。</p>
+<p>填装因子度量的是散列表中有多少位置是空的。</p>
+<p>一个不错的经验规则是：一旦填装因子大于0.7，就调整散列表的长度。</p>
+</blockquote>
+</blockquote>
+<p>◆ 5.5 小结</p>
+<blockquote>
+<blockquote>
+<p>散列表是一种功能强大的数据结构，其操作速度快，还能让你以不同的方式建立数据模型。</p>
+<p>你可以结合散列函数和数组来创建散列表。</p>
+<p>散列表适合用于模拟映射关系。</p>
+<p>❑ 一旦填装因子超过0.7，就该调整散列表的长度。</p>
+<p>❑ 散列表可用于缓存数据（例如，在Web服务器上）。❑ 散列表非常适合用于防止重复。</p>
+</blockquote>
+</blockquote>
+<p>◆ 6.1 图简介</p>
+<blockquote>
+<blockquote>
+<p>最短路径问题</p>
+<p>解决最短路径问题的算法被称为广度优先搜索。</p>
+</blockquote>
+</blockquote>
+<p>◆ 6.2 图是什么</p>
+<blockquote>
+<blockquote>
+<p>图用于模拟不同的东西是如何相连的。</p>
+</blockquote>
+</blockquote>
+<p>◆ 6.3 广度优先搜索</p>
+<blockquote>
+<blockquote>
+<p>在广度优先搜索的执行过程中，搜索范围从起点开始逐渐向外延伸，即先检查一度关系，再检查二度关系。</p>
+<p>你需要按添加顺序进行检查。有一个可实现这种目的的数据结构，那就是队列(queue)。</p>
+<p>队列是一种先进先出(First In First Out,FIFO)的数据结构，而栈是一种后进先出(Last In First Out,LIFO)的数据结构。</p>
+</blockquote>
+</blockquote>
+<p>◆ 6.4 实现图</p>
+<blockquote>
+<blockquote>
+<p>散列表是无序的，因此添加键—值对的顺序无关紧要。</p>
+</blockquote>
+</blockquote>
+<p>◆ 6.5 实现算法</p>
+<blockquote>
+<blockquote>
+<p>因此，检查完一个人后，应将其标记为已检查，且不再检查他。如果不这样做，就可能会导致无限循环。</p>
+<p>检查一个人之前，要确认之前没检查过他，这很重要。为此，你可使用一个列表来记录检查过的人。</p>
+<p>这种图被称为树。树是一种特殊的图，其中没有往后指的边。</p>
+</blockquote>
+</blockquote>
+<p>◆ 6.6 小结</p>
+<blockquote>
+<blockquote>
+<p>面临类似于寻找最短路径的问题时，可尝试使用图来建立模型，再使用广度优先搜索来解决问题。</p>
+<p>无向图中的边不带箭头，其中的关系是双向的</p>
+<p>❑ 队列是先进先出(FIFO)的。❑ 栈是后进先出(LIFO)的。</p>
+<p>❑ 你需要按加入顺序检查搜索列表中的人，否则找到的就不是最短路径，因此搜索列表必须是队列。</p>
+<p>对于检查过的人，务必不要再去检查，否则可能导致无限循环。</p>
+</blockquote>
+</blockquote>
+<p>◆ 第7章 狄克斯特拉算法</p>
+<blockquote>
+<blockquote>
+<p>广度优先搜索，它找出的是段数最少的路径</p>
+<p>如果你要找出最快的路径（如第二个图所示），该如何办呢？为此，可使用另一种算法——狄克斯特拉算法(Dijkstra's algorithm)。</p>
+</blockquote>
+</blockquote>
+<p>◆ 7.2 术语</p>
+<blockquote>
+<blockquote>
+<p>狄克斯特拉算法只适用于有向无环图(directed acyclic graph,DAG)。</p>
+</blockquote>
+</blockquote>
+<p>◆ 7.3 换钢琴</p>
+<blockquote>
+<blockquote>
+<p>通过沿父节点回溯，便得到了完整的交换路径。</p>
+<p>最短路径指的并不一定是物理距离，也可能是让某种度量指标最小。</p>
+</blockquote>
+</blockquote>
+<p>◆ 7.4 负权边</p>
+<blockquote>
+<blockquote>
+<p>如果有负权边，就不能使用狄克斯特拉算法。因为负权边会导致这种算法不管用。</p>
+<p>根据狄克斯特拉算法，没有比不支付任何费用获得海报更便宜的方式。（你知道这并不对！）</p>
+<p>节点一旦被处理，就意味着没有前往该节点的更便宜途径</p>
+<p>在包含负权边的图中，要找出最短路径，可使用另一种算法——贝尔曼—福德算法(Bellman-Ford algorithm)。</p>
+</blockquote>
+</blockquote>
+<p>◆ 8.1 教室调度问题</p>
+<blockquote>
+<blockquote>
+<p>贪婪算法很简单：每步都采取最优的做法</p>
+</blockquote>
+</blockquote>
+<p>◆ 8.2 背包问题</p>
+<blockquote>
+<blockquote>
+<p>在有些情况下，完美是优秀的敌人。有时候，你只需找到一个能够大致解决问题的算法，此时贪婪算法正好可派上用场，因为它们实现起来很容易，得到的结果又与正确结果相当接近。</p>
+</blockquote>
+</blockquote>
+<p>◆ 8.4 NP完全问题</p>
+<blockquote>
+<blockquote>
+<p>旅行商问题和集合覆盖问题有一些共同之处：你需要计算所有的解，并从中选出最小/最短的那个。这两个问题都属于NP完全问题。</p>
+<p>涉及“所有组合”的问题通常是NP完全问题。❑ 不能将问题分成小问题，必须考虑各种可能的情况。这可能是NP完全问题。</p>
+</blockquote>
+</blockquote>
+<p>◆ 9.2 背包问题FAQ</p>
+<blockquote>
+<blockquote>
+<p>动态规划功能强大，它能够解决子问题并使用这些答案来解决大问题。但仅当每个子问题都是离散的，即不依赖于其他子问题时，动态规划才管用。</p>
+</blockquote>
+</blockquote>
+<p>2023/12/09发表想法
+水，食物，相机</p>
+<blockquote>
+<blockquote>
+<p>请问携带哪些东西时价值最高？</p>
+</blockquote>
+</blockquote>
+<p>◆ 9.3 最长公共子串</p>
+<blockquote>
+<blockquote>
+<p>在问题可分解为彼此独立且离散的子问题时，就可使用动态规划来解决。</p>
+<p>实际上，根本没有找出计算公式的简单办法，你必须通过尝试才能找出管用的公式。有些算法并非精确的解决步骤，而只是帮助你理清思路的框架。</p>
+<p>编辑距离(levenshtein distance)</p>
+</blockquote>
+</blockquote>
+<p>◆ 10.2 创建推荐系统</p>
+<p>2023/12/09发表想法
+均一化？</p>
+<blockquote>
+<blockquote>
+<p>10.1　在Netflix示例中，你使用距离公式计算两位用户的距离，但给电影打分时，每位用户的标准并不都相同。假设你有两位用户——Yogi和Pinky，他们欣赏电影的品味相同，但Yogi给喜欢的电影都打5分，而Pinky更挑剔，只给特别好的电影打5分。他们的品味一致，但根据距离算法，他们并非邻居。如何将这种评分方式的差异考虑</p>
+</blockquote>
+</blockquote>
+<p>2023/12/09发表想法
+设定权重</p>
+<blockquote>
+<blockquote>
+<p>假设Netflix指定了一组意见领袖。例如，Quentin Tarantino和Wes Anderson就是Netflix的意见领袖，因此他们的评分比普通用户更重要。请问你该如何修改推荐系统，使其偏重于意见领袖的评分呢？</p>
+<p>余弦相似度(cosine similarity)。</p>
+<p>余弦相似度不计算两个矢量的距离，而比较它们的角度，因此更适合处理前面所说的情况。</p>
+<p>使用KNN时，挑选合适的特征进行比较至关重要。所谓合适的特征，就是：❑ 与要推荐的电影紧密相关的特征；❑ 不偏不倚的特征（例如，如果只让用户给喜剧片打分，就无法判断他们是否喜欢动作片）。</p>
+</blockquote>
+</blockquote>
+<p>◆ 11.1 树</p>
+<blockquote>
+<blockquote>
+<p>有人设计了一种名为二叉查找树(binary search tree)的数据结构。</p>
+<p>B树，红黑树，堆，伸展树。</p>
+</blockquote>
+</blockquote>
+<p>◆ 11.5 MapReduce</p>
+<blockquote>
+<blockquote>
+<p>MapReduce是一种流行的分布式算法，你可通过流行的开源工具Apache Hadoop来使用它。</p>
+</blockquote>
+</blockquote>
+<p>◆ 11.6 布隆过滤器和HyperLogLog</p>
+<blockquote>
+<blockquote>
+<p>面临海量数据且只要求答案八九不离十时，可考虑使用概率型算法！</p>
+</blockquote>
+</blockquote>
+<p>◆ 11.7 SHA算法</p>
+<blockquote>
+<blockquote>
+<p>当前，最安全的密码散列函数是bcrypt，但没有任何东西是万无一失的。</p>
+</blockquote>
+</blockquote>
+<p>◆ 11.8 局部敏感的散列算法</p>
+<blockquote>
+<blockquote>
+<p>需要检查两项内容的相似程度时，Simhash很有用</p>
+</blockquote>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1">//计算总和</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">arr</span><span class="p">.</span><span class="n">length</span><span class="p">)</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+<span class="w">        </span><span class="nl">else</span><span class="p">:</span>
+<span class="w">            </span><span class="n">sum</span><span class="o">=+</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span><span class="w">   </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">//快速排序</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">quicksortlow</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">){</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">length</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">array</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nl">else</span><span class="p">:</span>
+<span class="w">        </span><span class="n">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="w">        </span><span class="n">less</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">;]</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">pivot</span><span class="p">]</span>
+<span class="w">        </span><span class="n">more</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">;]</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="o">&gt;</span><span class="n">pivot</span><span class="p">]</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">quicksort</span><span class="p">(</span><span class="n">less</span><span class="p">)</span><span class="o">+</span><span class="n">pivot</span><span class="o">+</span><span class="n">quicksort</span><span class="p">(</span><span class="n">more</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm</p>
+<div class="highlight"><pre><span></span><code><span class="err">\\</span><span class="n">递归</span>
+<span class="n">def</span><span class="w"> </span><span class="n">get_page</span><span class="p">(</span><span class="n">url</span><span class="p">){</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">cache</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">:</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">cache</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="w">    </span><span class="nl">else</span><span class="p">:</span>
+<span class="w">        </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_data_from_server</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="w">        </span><span class="n">cache</span><span class="p">[</span><span class="n">url</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">data</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>\\<span class="n">广度优先bfs</span>
+<span class="k">while</span> <span class="n">search_queue</span><span class="p">:</span>
+    <span class="n">person</span> <span class="o">=</span> <span class="n">search_queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">person_is_seller</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="n">person</span> <span class="o">+</span> <span class="s2">&quot; is a mango seller!&quot;</span>
+        <span class="k">return</span> <span class="n">true</span>
+    <span class="k">else</span>
+        <span class="n">search_queue</span> <span class="o">+=</span> <span class="n">graph</span><span class="p">[</span><span class="n">person</span><span class="p">]</span>
+<span class="k">return</span> <span class="n">false</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>\\<span class="n">狄克斯特拉算法</span>
+<span class="k">def</span> <span class="nf">find_lowest_cost_node</span><span class="p">(</span><span class="n">costs</span><span class="p">):</span>
+    <span class="n">lowest_cost</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="n">lowest_cost_node</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">costs</span><span class="p">:</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="n">costs</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">cost</span> <span class="o">&lt;</span> <span class="n">lowest_cost</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">processed</span><span class="p">:</span>
+            <span class="n">lowest_cost</span> <span class="o">=</span> <span class="n">cost</span>
+            <span class="n">lowest_cost_node</span> <span class="o">=</span> <span class="n">node</span>
+    <span class="k">return</span> <span class="n">lowest_cost_node</span>
+
+<span class="n">node</span> <span class="o">=</span> <span class="n">find_lowest_cost_node</span><span class="p">(</span><span class="n">cost</span> <span class="n">s</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">node</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+    <span class="n">neighbors</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">new_cost</span> <span class="o">=</span> <span class="n">cost</span> <span class="o">+</span> <span class="n">neighbors</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">costs</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">new_cost</span><span class="p">:</span>
+            <span class="n">costs</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_cost</span>
+            <span class="n">parents</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span>
+    <span class="n">processed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">find_lowest_cost_node</span><span class="p">(</span><span class="n">costs</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Index
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Trouble Shooting">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Trouble Shooting
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.path"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.cd18aaf1.min.js"></script>
+      
+    
+  </body>
+</html>
