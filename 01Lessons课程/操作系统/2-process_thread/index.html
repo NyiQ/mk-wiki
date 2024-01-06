@@ -14,7 +14,7 @@
         <link rel="prev" href="../1-preface/">
       
       
-        <link rel="next" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/1-%20Preface/">
+        <link rel="next" href="../3-memory_management/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -333,10 +333,10 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../05Reading%E4%B9%A6%E5%8D%95/" class="md-tabs__link">
+        <a href="../../../05Reading%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
           
   
-  05Reading书单
+  05Reading笔记
 
         </a>
       </li>
@@ -1033,6 +1033,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级反馈队列调度算法：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级队列调度算法
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1069,6 +1087,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2.3.2 进程互斥的软件实现方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      单标志法（违背“空闲让进”）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      双标志先检查法（违背“忙则等待”）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      双标志后检查法（违背“空闲让进”和“有限等待”）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peterson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peterson算法（违背“让权等待”）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1077,6 +1137,39 @@
       2.3.3 进程互斥的硬件实现方法
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2.3.3 进程互斥的硬件实现方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      中断屏蔽方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testandsettstsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      TestAndSet指令（TS、TSL指令）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swapexchangexchg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Swap指令（Exchange、XCHG指令）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1101,9 +1194,42 @@
           <li class="md-nav__item">
   <a href="#236" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3.6 用信号量实现进程互斥、同步、前驱关系
+      2.3.6 用信号量实现进程互斥、同步、前驱关系（重点）
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2.3.6 用信号量实现进程互斥、同步、前驱关系（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号量机制实现进程互斥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号量机制实现进程同步
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号量机制实现前驱关系
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1192,6 +1318,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2.4.2 死锁的处理策略——预防死锁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      破坏互斥条件（允许共享使用）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      破坏不剥夺条件（得不到新的就释放旧的，强行剥夺）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      破坏请求和保持条件（静态分配）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      破坏循环等待条件（顺序分配）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1201,6 +1369,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2.4.3 死锁的处理策略——避免死锁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全序列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      银行家算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1209,6 +1401,30 @@
       2.4.4 死锁的处理策略——检测和解除
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2.4.4 死锁的处理策略——检测和解除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      死锁的检测
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      死锁的解除
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1221,6 +1437,69 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-memory_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 内存管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-file_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. 文件管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-IO_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. 输入输出管理
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1376,6 +1655,69 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/6-map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. 图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/7-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. 查找
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/8-order/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. 排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1463,6 +1805,111 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/3-saving_system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 存储系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/4-direction_system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. 指令系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/5-CPU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. 中央处理器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/6-highway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. 总线
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/7-IOsystem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. 输入输出系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1520,6 +1967,111 @@
   
   <span class="md-ellipsis">
     1. 计算机网络体系结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/2-physics_layer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 物理层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3-data_link_layer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 data link layer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4-network_layer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 network layer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/5-transport_layer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 transport layer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/6-application_layer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 application layer
   </span>
   
 
@@ -1996,6 +2548,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../02Research%E4%B8%93%E9%A2%98/how-to-learn-fast/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    如何快速学习新的领域知识
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../02Research%E4%B8%93%E9%A2%98/templates/" class="md-nav__link">
         
   
@@ -2174,6 +2747,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../04Coding%E7%BC%96%E7%A8%8B/front_end/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Front end
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../04Coding%E7%BC%96%E7%A8%8B/troubleshooting/" class="md-nav__link">
         
   
@@ -2221,7 +2815,7 @@
             
   
   <span class="md-ellipsis">
-    05Reading书单
+    05Reading笔记
   </span>
   
 
@@ -2231,7 +2825,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            05Reading书单
+            05Reading笔记
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2242,7 +2836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../05Reading%E4%B9%A6%E5%8D%95/" class="md-nav__link">
+      <a href="../../../05Reading%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2263,7 +2857,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../05Reading%E4%B9%A6%E5%8D%95/awesome-blogs/" class="md-nav__link">
+      <a href="../../../05Reading%E7%AC%94%E8%AE%B0/20240106-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    如果让我管理一个团队
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05Reading%E7%AC%94%E8%AE%B0/TrialLecture-bubblesort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    冒泡排序面试试讲
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05Reading%E7%AC%94%E8%AE%B0/articles-to-translate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Articles to translate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05Reading%E7%AC%94%E8%AE%B0/awesome-blogs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2284,11 +2941,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../05Reading%E4%B9%A6%E5%8D%95/awesome-books/" class="md-nav__link">
+      <a href="../../../05Reading%E7%AC%94%E8%AE%B0/awesome-books/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Awesome books
+    书单
   </span>
   
 
@@ -2305,11 +2962,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../05Reading%E4%B9%A6%E5%8D%95/awesome-hobbies/" class="md-nav__link">
+      <a href="../../../05Reading%E7%AC%94%E8%AE%B0/awesome-hobbies/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Awesome hobbies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05Reading%E7%AC%94%E8%AE%B0/big-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    大数据经典论文解读（徐文浩）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05Reading%E7%AC%94%E8%AE%B0/regexlearn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    正则表达式学习
   </span>
   
 
@@ -2786,6 +3485,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级反馈队列调度算法：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级队列调度算法
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2822,6 +3539,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2.3.2 进程互斥的软件实现方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      单标志法（违背“空闲让进”）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      双标志先检查法（违背“忙则等待”）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      双标志后检查法（违背“空闲让进”和“有限等待”）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peterson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peterson算法（违背“让权等待”）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2830,6 +3589,39 @@
       2.3.3 进程互斥的硬件实现方法
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2.3.3 进程互斥的硬件实现方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      中断屏蔽方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testandsettstsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      TestAndSet指令（TS、TSL指令）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swapexchangexchg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Swap指令（Exchange、XCHG指令）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2854,9 +3646,42 @@
           <li class="md-nav__item">
   <a href="#236" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3.6 用信号量实现进程互斥、同步、前驱关系
+      2.3.6 用信号量实现进程互斥、同步、前驱关系（重点）
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2.3.6 用信号量实现进程互斥、同步、前驱关系（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号量机制实现进程互斥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号量机制实现进程同步
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号量机制实现前驱关系
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2945,6 +3770,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2.4.2 死锁的处理策略——预防死锁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      破坏互斥条件（允许共享使用）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      破坏不剥夺条件（得不到新的就释放旧的，强行剥夺）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      破坏请求和保持条件（静态分配）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      破坏循环等待条件（顺序分配）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2954,6 +3821,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2.4.3 死锁的处理策略——避免死锁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全序列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      银行家算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2962,6 +3853,30 @@
       2.4.4 死锁的处理策略——检测和解除
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2.4.4 死锁的处理策略——检测和解除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      死锁的检测
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      死锁的解除
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3161,25 +4076,224 @@
 <p><img alt="image-20231216233005585" src="../2-process_thread.assets/image-20231216233005585.png" /></p>
 <p><img alt="image-20231216233053036" src="../2-process_thread.assets/image-20231216233053036.png" /></p>
 <p><img alt="image-20231216233138833" src="../2-process_thread.assets/image-20231216233138833.png" /></p>
+<p>时间片太大会退化为先来先服务，时间偏太小调度浪费太大。</p>
 <h4 id="_24">优先级调度算法<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<p>非抢占式：</p>
+<p><img alt="image-20231217225115339" src="../2-process_thread.assets/image-20231217225115339.png" /></p>
+<p>抢占式：</p>
+<p><img alt="image-20231217225226279" src="../2-process_thread.assets/image-20231217225226279.png" /></p>
+<p>高响应比优先算法就是一种动态优先的算法。</p>
+<p><img alt="image-20231217225512772" src="../2-process_thread.assets/image-20231217225512772.png" /></p>
+<p><img alt="image-20231217225532552" src="../2-process_thread.assets/image-20231217225532552.png" /></p>
+<p><img alt="image-20231217225552677" src="../2-process_thread.assets/image-20231217225552677.png" /></p>
+<h4 id="_25">多级反馈队列调度算法：<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231217225916715" src="../2-process_thread.assets/image-20231217225916715.png" /></p>
+<p><img alt="image-20231217230142910" src="../2-process_thread.assets/image-20231217230142910.png" /></p>
+<p><img alt="image-20231217230417331" src="../2-process_thread.assets/image-20231217230417331.png" /></p>
+<h4 id="_26">多级队列调度算法<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231217231011292" src="../2-process_thread.assets/image-20231217231011292.png" /></p>
 <h2 id="23">2.3 同步与互斥<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
 <h3 id="231">2.3.1 同步与互斥的基本概念<a class="headerlink" href="#231" title="Permanent link">&para;</a></h3>
+<p>异步性：并发进程推进速度不可知且各自独立。</p>
+<p>异步性是一个问题，而我们希望保证进程的推进次序按照我们想要的顺序进行。我们要求同步性，就是让并发进程有序推进。所以通过互斥来阻止异步性，实现同步性。</p>
+<p><img alt="image-20231218225652146" src="../2-process_thread.assets/image-20231218225652146.png" /></p>
+<p><img alt="image-20231218225833796" src="../2-process_thread.assets/image-20231218225833796.png" /></p>
+<p>临界资源需要互斥的进行：</p>
+<p><img alt="image-20231218225942721" src="../2-process_thread.assets/image-20231218225942721.png" /></p>
+<p>进入区和退出区只实现互斥，临界区（临界段）用于访问资源。</p>
+<p><img alt="image-20231218230142563" src="../2-process_thread.assets/image-20231218230142563.png" /></p>
+<p><img alt="image-20231218230252008" src="../2-process_thread.assets/image-20231218230252008.png" /></p>
+<p>进程互斥四原则：空闲让进、忙则等待、有限等待、让权等待。</p>
+<p><img alt="image-20231218230259564" src="../2-process_thread.assets/image-20231218230259564.png" /></p>
+<p>进程同步：进程之间的直接制约关系。</p>
+<p>进程互斥：进程之间的间接制约关系。互斥实现需要四个部分：进入临界退出剩余。</p>
 <h3 id="232">2.3.2 进程互斥的软件实现方法<a class="headerlink" href="#232" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219093926672" src="../2-process_thread.assets/image-20231219093926672.png" /></p>
+<p>如果没有进程互斥？AB打印内容混合。</p>
+<p><img alt="image-20231219094107940" src="../2-process_thread.assets/image-20231219094107940.png" /></p>
+<h4 id="_27">单标志法（违背“空闲让进”）<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
+<p>通过改变turn的值，实现同一时刻最多只允许一个进程访问临界区。“谦让”</p>
+<p>缺点：如果p0一直不用，但是p1需要频繁使用呢？虽然空闲但是不给用，违背了空闲让进原则。</p>
+<p>原因：无法表达需求。</p>
+<p><img alt="image-20231219094521196" src="../2-process_thread.assets/image-20231219094521196.png" /></p>
+<p><img alt="image-20231219094653979" src="../2-process_thread.assets/image-20231219094653979.png" /></p>
+<p><img alt="image-20231219094811107" src="../2-process_thread.assets/image-20231219094811107.png" /></p>
+<h4 id="_28">双标志先检查法（违背“忙则等待”）<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
+<p>“表达意愿”，用之前询问对方意愿。</p>
+<p>缺点：如果双方都想用呢？一开始检查发现都为0，然后就冲突使用了。违反“忙则等待”原则。</p>
+<p>原因：检查和上锁无法一气呵成使用。</p>
+<p><img alt="image-20231219094945958" src="../2-process_thread.assets/image-20231219094945958.png" /></p>
+<p><img alt="image-20231219095212244" src="../2-process_thread.assets/image-20231219095212244.png" /></p>
+<h4 id="_29">双标志后检查法（违背“空闲让进”和“有限等待”）<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
+<p>先上锁后检查。解决了忙则等待，但如果两人都先上锁？那就又卡死，没法用了。</p>
+<p>问题：违背了空闲让进和有限等待。</p>
+<p>原因：两个进程争着进入临界区。</p>
+<p><img alt="image-20231219095638502" src="../2-process_thread.assets/image-20231219095638502.png" /></p>
+<p><img alt="image-20231219095911350" src="../2-process_thread.assets/image-20231219095911350.png" /></p>
+<h4 id="peterson">Peterson算法（违背“让权等待”）<a class="headerlink" href="#peterson" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231219102025570" src="../2-process_thread.assets/image-20231219102025570.png" /></p>
+<p><img alt="image-20231219102329340" src="../2-process_thread.assets/image-20231219102329340.png" /></p>
+<p><img alt="image-20231219102343687" src="../2-process_thread.assets/image-20231219102343687.png" /></p>
+<p>让权等待：如果进不去cpu资源，应立刻释放资源。</p>
+<p><img alt="image-20231219102518213" src="../2-process_thread.assets/image-20231219102518213.png" /></p>
+<p><img alt="image-20231219102528276" src="../2-process_thread.assets/image-20231219102528276.png" /></p>
 <h3 id="233">2.3.3 进程互斥的硬件实现方法<a class="headerlink" href="#233" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219102714269" src="../2-process_thread.assets/image-20231219102714269.png" /></p>
+<h4 id="_30">中断屏蔽方法<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231219102839403" src="../2-process_thread.assets/image-20231219102839403.png" /></p>
+<h4 id="testandsettstsl">TestAndSet指令（TS、TSL指令）<a class="headerlink" href="#testandsettstsl" title="Permanent link">&para;</a></h4>
+<p>上锁和检查一气呵成，原子操作。不满足让权等待。</p>
+<p><img alt="image-20231219103223160" src="../2-process_thread.assets/image-20231219103223160.png" /></p>
+<h4 id="swapexchangexchg">Swap指令（Exchange、XCHG指令）<a class="headerlink" href="#swapexchangexchg" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231219103628180" src="../2-process_thread.assets/image-20231219103628180.png" /></p>
+<p><img alt="image-20231219103651848" src="../2-process_thread.assets/image-20231219103651848.png" /></p>
 <h3 id="234">2.3.4 互斥锁<a class="headerlink" href="#234" title="Permanent link">&para;</a></h3>
+<p>自旋锁（spin lock）：循环忙等，如TSL指令、swap指令、单标志法。</p>
+<p><img alt="image-20231219110150116" src="../2-process_thread.assets/image-20231219110150116.png" /></p>
+<p><img alt="image-20231219110801995" src="../2-process_thread.assets/image-20231219110801995.png" /></p>
+<p>单处理机：单核p1不可能被解锁，除非时间片轮转，上锁的进程解锁后，p1才能用。所以不适用于单核处理机。</p>
 <h3 id="235">2.3.5 信号量机制<a class="headerlink" href="#235" title="Permanent link">&para;</a></h3>
-<h3 id="236">2.3.6 用信号量实现进程互斥、同步、前驱关系<a class="headerlink" href="#236" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219111607420" src="../2-process_thread.assets/image-20231219111607420.png" /></p>
+<p>信号量是一个变量，可以用于表示系统中某种资源的数量。</p>
+<p>使用一对原语（wait-signal，P-V）对信号量进行操作。</p>
+<p><img alt="image-20231219111926104" src="../2-process_thread.assets/image-20231219111926104.png" /></p>
+<p>整型信号量只有三种操作：初始化、P操作、V操作。</p>
+<p><img alt="image-20231219112259781" src="../2-process_thread.assets/image-20231219112259781.png" /></p>
+<p>如果一个进程一直进不了临界区，也就被卡在wait原语里的while循环里。wait是不会被中断的，那么当前执行while的进程是不是不会被切换呢？</p>
+<p>wait原语执行后，B进程会进入阻塞队列，此时wait已经执行完毕，以后的进程调度就不会再调度B了，因为B并不处于就绪态。当A离开临界区，B可能从阻塞队列弹出，转为就绪态以后才会重新获得被CPU临幸的机会。（不对啊，这是记录型信号量的方法。）</p>
+<p>整型信号量不满足“让权等待”，会发生盲等。</p>
+<p><img alt="image-20231219113442450" src="../2-process_thread.assets/image-20231219113442450.png" /></p>
+<p><img alt="image-20231219113924289" src="../2-process_thread.assets/image-20231219113924289.png" /></p>
+<p><img alt="image-20231219114219808" src="../2-process_thread.assets/image-20231219114219808.png" /></p>
+<p><img alt="image-20231219114317618" src="../2-process_thread.assets/image-20231219114317618.png" /></p>
+<h3 id="236">2.3.6 用信号量实现进程互斥、同步、前驱关系（重点）<a class="headerlink" href="#236" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219114712874" src="../2-process_thread.assets/image-20231219114712874.png" /></p>
+<h4 id="_31">信号量机制实现进程互斥<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231219115736179" src="../2-process_thread.assets/image-20231219115736179.png" /></p>
+<h4 id="_32">信号量机制实现进程同步<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231219120835977" src="../2-process_thread.assets/image-20231219120835977.png" /></p>
+<p><img alt="image-20231219121059001" src="../2-process_thread.assets/image-20231219121059001.png" /></p>
+<p>前v后p。</p>
+<h4 id="_33">信号量机制实现前驱关系<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231219121404143" src="../2-process_thread.assets/image-20231219121404143.png" /></p>
+<p><img alt="image-20231219121503675" src="../2-process_thread.assets/image-20231219121503675.png" /></p>
 <h3 id="237-">2.3.7 生产者 - 消费者问题<a class="headerlink" href="#237-" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219121913791" src="../2-process_thread.assets/image-20231219121913791.png" /></p>
+<p><img alt="image-20231219122103472" src="../2-process_thread.assets/image-20231219122103472.png" /></p>
+<p><img alt="image-20231219122203222" src="../2-process_thread.assets/image-20231219122203222.png" /></p>
+<p>互斥：统一进程。</p>
+<p>同步：不同进程。</p>
+<p><img alt="image-20231219122405492" src="../2-process_thread.assets/image-20231219122405492.png" /></p>
+<p><img alt="image-20231219122748739" src="../2-process_thread.assets/image-20231219122748739.png" /></p>
+<p>互斥的p操作一定要在同步的p操作之后。v操作可以交换。</p>
+<p>能否将生产产品和使用产品放在pv操作里面呢？会延长临界区使用时长，影响效能。</p>
+<p><img alt="image-20231219122911023" src="../2-process_thread.assets/image-20231219122911023.png" /></p>
 <h3 id="238-">2.3.8 多生产者 - 多消费者问题<a class="headerlink" href="#238-" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219124407317" src="../2-process_thread.assets/image-20231219124407317.png" /></p>
+<p><img alt="image-20231219124538769" src="../2-process_thread.assets/image-20231219124538769.png" /></p>
+<p><img alt="image-20231219124711522" src="../2-process_thread.assets/image-20231219124711522.png" /></p>
+<p><img alt="image-20231219124759897" src="../2-process_thread.assets/image-20231219124759897.png" /></p>
+<p><img alt="image-20231219124841951" src="../2-process_thread.assets/image-20231219124841951.png" /></p>
+<p><img alt="image-20231219125030679" src="../2-process_thread.assets/image-20231219125030679.png" /></p>
 <h3 id="239">2.3.9 吸烟者问题<a class="headerlink" href="#239" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219125204285" src="../2-process_thread.assets/image-20231219125204285.png" /></p>
+<p><img alt="image-20231219131401777" src="../2-process_thread.assets/image-20231219131401777.png" /></p>
+<p><img alt="image-20231219131516391" src="../2-process_thread.assets/image-20231219131516391.png" /></p>
+<p><img alt="image-20231219131757177" src="../2-process_thread.assets/image-20231219131757177.png" /></p>
+<p><img alt="image-20231219132439292" src="../2-process_thread.assets/image-20231219132439292.png" /></p>
 <h3 id="2310">2.3.10 读者写者问题<a class="headerlink" href="#2310" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219164801961" src="../2-process_thread.assets/image-20231219164801961.png" /></p>
+<p>第一个进程加锁，最后一个进程解锁。问题：两个进程同时满足if条件，对读写操作加锁？答：需要对检查和加锁动作原子化，所以检查前加一个p(mutex)，加锁后加一个v（mutex）。</p>
+<p><img alt="image-20231219165725528" src="../2-process_thread.assets/image-20231219165725528.png" /></p>
+<p><img alt="image-20231219165935873" src="../2-process_thread.assets/image-20231219165935873.png" /></p>
+<p>如何解决写进程饿死？</p>
+<p><img alt="image-20231219170957568" src="../2-process_thread.assets/image-20231219170957568.png" /></p>
+<p><img alt="image-20231219171315681" src="../2-process_thread.assets/image-20231219171315681.png" /></p>
+<p>同步问题：生产者消费者。</p>
+<p>互斥问题：读者写者。count-多读者、mutex-将检查与上锁操作原子化、w-通过先来先服务原则实现写优先。</p>
+<p>死锁问题：哲学家-多个临界资源。</p>
 <h3 id="2311">2.3.11 哲学家进餐问题<a class="headerlink" href="#2311" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219171743865" src="../2-process_thread.assets/image-20231219171743865.png" /></p>
+<p>死锁现象：5个哲学家同时拿起一个筷子。</p>
+<p><img alt="image-20231219171901893" src="../2-process_thread.assets/image-20231219171901893.png" /></p>
+<p>解决方法：1、最多只让4人吃。2、奇数先拿左，偶数先拿右。3、只有左右两只筷子都可用才拿筷子。</p>
+<p><img alt="image-20231219172801868" src="../2-process_thread.assets/image-20231219172801868.png" /></p>
+<p><img alt="image-20231219172849788" src="../2-process_thread.assets/image-20231219172849788.png" /></p>
+<p><img alt="image-20231219173245684" src="../2-process_thread.assets/image-20231219173245684.png" /></p>
+<p><img alt="image-20231219173352485" src="../2-process_thread.assets/image-20231219173352485.png" /></p>
 <h3 id="2312">2.3.12 管程<a class="headerlink" href="#2312" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219173401075" src="../2-process_thread.assets/image-20231219173401075.png" /></p>
+<p><img alt="image-20231219173459849" src="../2-process_thread.assets/image-20231219173459849.png" /></p>
+<p>管程和pv都是用来操作互斥和同步的，因为多个进程需要共享数据资源。</p>
+<p>管程类似于类。<img alt="image-20231219173919529" src="../2-process_thread.assets/image-20231219173919529.png" /></p>
+<p><img alt="image-20231219174349635" src="../2-process_thread.assets/image-20231219174349635.png" /></p>
+<p><img alt="image-20231219174555212" src="../2-process_thread.assets/image-20231219174555212.png" /></p>
+<p><img alt="image-20231219174640459" src="../2-process_thread.assets/image-20231219174640459.png" /></p>
+<p><img alt="image-20231219174731181" src="../2-process_thread.assets/image-20231219174731181.png" /></p>
 <h2 id="24">2.4 死锁<a class="headerlink" href="#24" title="Permanent link">&para;</a></h2>
 <h3 id="241">2.4.1 死锁的概念<a class="headerlink" href="#241" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219174810805" src="../2-process_thread.assets/image-20231219174810805.png" /></p>
+<p><img alt="image-20231219174853721" src="../2-process_thread.assets/image-20231219174853721.png" /></p>
+<p>死锁：所有进程都在等待资源。</p>
+<p><img alt="image-20231219175100268" src="../2-process_thread.assets/image-20231219175100268.png" /></p>
+<p><img alt="image-20231219175348710" src="../2-process_thread.assets/image-20231219175348710.png" /></p>
+<p>死锁发生的必要条件：1、互斥-只有资源必须互斥访问才会死锁。2、不剥夺条件-别人抢不了只能主动给。3、请求和保持-已经保持了至少一个资源，向新资源提出请求，请求被阻塞，但又不释放。4、循环等待条件。</p>
+<p><img alt="image-20231219180047084" src="../2-process_thread.assets/image-20231219180047084.png" /></p>
+<p><img alt="image-20231219180223758" src="../2-process_thread.assets/image-20231219180223758.png" /></p>
+<p><img alt="image-20231219180351738" src="../2-process_thread.assets/image-20231219180351738.png" /></p>
+<p><img alt="image-20231219180433352" src="../2-process_thread.assets/image-20231219180433352.png" /></p>
 <h3 id="242">2.4.2 死锁的处理策略——预防死锁<a class="headerlink" href="#242" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219180453435" src="../2-process_thread.assets/image-20231219180453435.png" /></p>
+<h4 id="_34">破坏互斥条件（允许共享使用）<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h4>
+<p>适用范围小</p>
+<p><img alt="image-20231219180657218" src="../2-process_thread.assets/image-20231219180657218.png" /></p>
+<h4 id="_35">破坏不剥夺条件（得不到新的就释放旧的，强行剥夺）<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
+<p>实现复杂，可能会使之前工作失效，增加开销，饥饿</p>
+<p><img alt="image-20231219180943176" src="../2-process_thread.assets/image-20231219180943176.png" /></p>
+<h4 id="_36">破坏请求和保持条件（静态分配）<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h4>
+<p>浪费资源，饥饿。</p>
+<p><img alt="image-20231219181314563" src="../2-process_thread.assets/image-20231219181314563.png" /></p>
+<h4 id="_37">破坏循环等待条件（顺序分配）<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
+<p>不方便添加新设备</p>
+<p><img alt="image-20231219181746817" src="../2-process_thread.assets/image-20231219181746817.png" /></p>
+<p><img alt="image-20231219181912645" src="../2-process_thread.assets/image-20231219181912645.png" /></p>
 <h3 id="243">2.4.3 死锁的处理策略——避免死锁<a class="headerlink" href="#243" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219182126348" src="../2-process_thread.assets/image-20231219182126348.png" /></p>
+<h4 id="_38">安全序列<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231219182255351" src="../2-process_thread.assets/image-20231219182255351.png" /></p>
+<p><img alt="image-20231219182343552" src="../2-process_thread.assets/image-20231219182343552.png" /></p>
+<p><img alt="image-20231219182418345" src="../2-process_thread.assets/image-20231219182418345.png" /></p>
+<p><img alt="image-20231219182618252" src="../2-process_thread.assets/image-20231219182618252.png" /></p>
+<h4 id="_39">银行家算法<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231219182801948" src="../2-process_thread.assets/image-20231219182801948.png" /></p>
+<p><img alt="image-20231219182913089" src="../2-process_thread.assets/image-20231219182913089.png" /></p>
+<p><img alt="image-20231219182927057" src="../2-process_thread.assets/image-20231219182927057.png" /></p>
+<p><img alt="image-20231219182941986" src="../2-process_thread.assets/image-20231219182941986.png" /></p>
+<p><img alt="image-20231219183025821" src="../2-process_thread.assets/image-20231219183025821.png" /></p>
+<p><img alt="image-20231219183127716" src="../2-process_thread.assets/image-20231219183127716.png" /></p>
+<p><img alt="image-20231219183320719" src="../2-process_thread.assets/image-20231219183320719.png" /></p>
+<p><img alt="image-20231219183522405" src="../2-process_thread.assets/image-20231219183522405.png" /></p>
+<p>银行家算法思路：计算每个进程最多还需要资源数，挨个对比现有资源数，判断是否安全。</p>
+<p>银行家算法实现：</p>
+<p>三个矩阵：最大需求矩阵Max、已分配矩阵Allocation、还需资源矩阵Need。</p>
+<p>一个数组：本次申请资源量Request~i~。</p>
+<p>判断流程：Request &lt;= Need，Request&lt;= Available，分配完了之后重置三个矩阵，判断是否安全，不安全阻塞，安全正式分配。</p>
 <h3 id="244">2.4.4 死锁的处理策略——检测和解除<a class="headerlink" href="#244" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20231219184656925" src="../2-process_thread.assets/image-20231219184656925.png" /></p>
+<h4 id="_40">死锁的检测<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231219184816690" src="../2-process_thread.assets/image-20231219184816690.png" /></p>
+<p><img alt="image-20231219184949378" src="../2-process_thread.assets/image-20231219184949378.png" /></p>
+<p><img alt="image-20231219185149148" src="../2-process_thread.assets/image-20231219185149148.png" /></p>
+<p><img alt="image-20231219185255358" src="../2-process_thread.assets/image-20231219185255358.png" /></p>
+<p>死锁定理：如果某时刻系统的资源分配图是不可完全简化的，那么此时系统死锁。</p>
+<h4 id="_41">死锁的解除<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20231219185543386" src="../2-process_thread.assets/image-20231219185543386.png" /></p>
+<p>1、优先牺牲优先级低的进程</p>
+<p>2、优先牺牲已执行时间短的进程</p>
+<p>3、优先牺牲晚结束的进程</p>
+<p>4、优先牺牲拥有更多资源的进程</p>
+<p>5、优先牺牲批处理进程</p>
+<p><img alt="image-20231219190152545" src="../2-process_thread.assets/image-20231219190152545.png" /></p>
 
 
 
@@ -3218,13 +4332,13 @@
         
         
           
-          <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/1-%20Preface/" class="md-footer__link md-footer__link--next" aria-label="Next: 1. 绪论">
+          <a href="../3-memory_management/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. 内存管理">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                1. 绪论
+                3. 内存管理
               </div>
             </div>
             <div class="md-footer__button md-icon">
